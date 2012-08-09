@@ -1,0 +1,4 @@
+-r requirements.txt
+
+pyoai==2.4.4
+pymarc==2.8.4
