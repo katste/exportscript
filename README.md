@@ -1,8 +1,10 @@
 Libris OAI-PMH export script
 ============================
 
-Edit properties.py to include OAI-PMH user and password
+Edit properties.py to configure export
 
 sudo easy_install pip
+
 pip install -r requirements.txt
-python deletebib.py YYYYMMDD YYYYMMDD sigel\*[\*,sigel2,sigel3..\*]\*
+
+python oaipmhexport.py \<mode\>\[deletedbibs\/exportrecords\]
