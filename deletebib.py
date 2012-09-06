@@ -8,18 +8,12 @@ from oaipmh import metadata
 from oaipmh.datestamp import datestamp_to_datetime
 from cStringIO import StringIO
 from lxml.etree import tostring, XPathEvaluator
-from pymarc import marcxml
 from pymarc.record import *
+from MARCXML import MARCXMLReader
 import datetime
 import sys
 import properties
 
-class MARCXMLReader(object):
-    """Returns the PyMARC record from the OAI structure for MARC XML"""
-    def __call__(self, element):
-        handler = marcxml.XmlHandler()
-        marcxml.parse_xml( StringIO( tostring(element[0]) ), handler)
-        return handler.records[0]
 
 if len(sys.argv) != 4:
     print "Usage: deletebib.py <YYYYMMDD> <YYYYMMDD> <sigel1>[,sigel2,sigel3,...,sigeln]"
